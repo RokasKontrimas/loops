@@ -11,3 +11,7 @@
 // 5. Pakelia skaičių kvadratu.
 //
 // 6. Pakelia skaičių kūbu.
+
+7. Sukurti analogiškas funkcijas pirmoms užduotims,
+ tačiau padaryti,
+ jog ciklai skaičiuotųsi nuo 100 iki 1.
