@@ -1,5 +1,6 @@
 function mathCalculator(from, to, each, number, operator) {
     let mathematicalSign = '';
+    let operateLoop = true;
     switch (true) {
         case operator === 'subtract':
             mathematicalSign = '-';
@@ -16,16 +17,26 @@ function mathCalculator(from, to, each, number, operator) {
         case operator === 'divide':
             mathematicalSign = '/';
             break;
+        default:
+            operateLoop = false;
+            console.log('Invalid mathematical operator')
+            break;
 
     }
-    for (let i = from; i <= to; i++) {
-        if ((i - from + 1) % each === 0) {
-            // console.log(i)
-            let expression = `${i} ${mathematicalSign} ${number}`;
-            let answer = eval(expression);
-            console.log(`${expression} = ${answer}`);
+    if (operateLoop) {
+        if (each < 1) {
+            console.log('Number cannot be 0!');
+        } else {
+
+            for (let i = from; i <= to; i++) {
+                if ((i - from + 1) % each === 0) {
+                    let expression = `${i} ${mathematicalSign} ${number}`;
+                    let answer = eval(expression);
+                    console.log(`${expression} = ${answer}`);
+                }
+            }
         }
     }
 }
 
-mathCalculator(1, 123, 3, 2, 'multiply')
+mathCalculator(1, 123, 1, 2, 'multiply')
